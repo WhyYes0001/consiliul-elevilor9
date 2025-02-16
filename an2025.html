@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consiliul Elevilor </title>
+  <meta name="title" content="Consiliul Elevilor">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/font/font.css">
+  <link rel="preload" as="image" href="./assets/images/loading.svg">
+  <link rel="preload" as="image" href="./assets/images/loading-circle.svg">
+  
+  
+
+
+</head>
+
+<body class="active" id="top">
+
+
+  <div class="loading" data-loading>
+    <img src="./assets/images/1l.png" width="100" height="100" alt="loading" class="img">
+    <img src="./assets/images/loading-circle.svg" width="70" height="70" alt="" class="circle">
+  </div>
+ 
+  <header id="header">
+    <nav>
+      <div class="wrapper">
+        <div class="logo"><a href="#">Consiliul Elevilor</a></div>
+        <input type="radio" name="slider" id="menu-btn">
+        <input type="radio" name="slider" id="close-btn">
+        <ul class="nav-links">
+          <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+          <li><a href="index.html">Pagina principală</a></li>
+          <li><a href="info.html">Reguli</a></li>
+
+          <li>
+            <a href="#" class="desktop-item">Evenimente</a>
+           
+            <ul class="drop-menu">
+              <li><a href="an2023.html">2023</a></li>
+              <li><a href="an2024.html">2024</a></li>
+              <li><a href="an2025.html">2025</a></li>
+
+            </ul>
+          </li>
+          <li><a href="index.html#insc">Cereri</a></li>
+        </ul>
+        <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+      </div>
+    </nav>
+    
+    
+</header>
+
+  <main>
+    <article>
+        <style>
+            :root {
+
+/**
+ * colors
+ */
+ --smokey-black: rgb(252, 242, 232);
+ --eerie-black: rgb(251, 235, 218) ;
+ --radical-red: hsl(166, 100%, 58%);
+ --white_a9: hsla(180, 0%, 0%, 0.09);
+ --white_a15: hsla(180, 0%, 0%, 0.15);
+ --white_a25: hsla(180, 0%, 0%, 0.25);
+ --white_a50: hsla(180, 0%, 0%, 0.5);
+ --white_a70: hsla(180, 0%, 0%, 0.7);
+ --white_a75: hsla(180, 0%, 0%, 0.75);
+ --white_a80: hsla(180, 0%, 0%, 0.8);
+ --jet-1: hsl(180, 0%, 80%);
+ --jet-2: hsl(180, 0%, 84%);
+ --white: hsl(180, 0%, 0%);
+ --black: hsl(180, 0%, 100%);
+
+/**
+ * gradient color
+ */
+
+--gradient-1: linear-gradient(180deg, transparent, var(--smokey-black));
+--gradient-2: linear-gradient(180deg,var(--smokey-black) 25%,hsla(0, 0%, 0%, 0.6) 80%);
+
+/**
+ * typography
+ */
+
+--ff-recoleta: "Recoleta", serif;
+--ff-gordita: "Gordita", sans-serif;
+
+--fs-1: 6rem;
+--fs-2: 5rem;
+--fs-3: 3.8rem;
+--fs-4: 2.8rem;
+--fs-5: 2.6rem;
+--fs-6: 2.2rem;
+--fs-7: 2rem;
+--fs-8: 1.8rem;
+--fs-9: 1.5rem;
+--fs-10: 1.4rem;
+--fs-11: 1.2rem;
+
+--fw-300: 300;
+--fw-400: 400;
+--fw-500: 500;
+
+/**
+ * spacing
+ */
+
+--section-padding: 60px;
+
+/**
+ * shadow
+ */
+
+--shadow: 0 12px 30px -10px hsla(0, 0%, 14%, 0.1);
+
+/**
+ * border radius
+ */
+
+--radius-circle: 50%;
+--radius-5: 5px;
+--radius-25: 25px;
+
+/**
+ * transition
+ */
+
+--transition-1: 0.25s ease;
+--transition-2: 0.5s ease;
+--transition-3: 1s ease;
+--cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+--cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+
+}
+
+
+            .left,
+            .right {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 3%;
+            }
+          
+            .left img {
+              max-width: 100%;
+              height: auto;
+              cursor: pointer;
+              background: transparent;
+            }
+          
+            .right p {
+              text-align: left;
+              padding: 0 20px;
+            }
+            .image-gallery {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+              }
+          
+              .gallery-image {
+                cursor: pointer;
+                margin: 10px;
+                background: transparent;
+              }
+          
+              .popup {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                z-index: 999;
+                overflow: auto;
+              }
+          
+              .popup-content {
+                position: relative;
+                margin: 5% auto;
+                padding: 20px;
+                background: transparent;
+                border-radius: 5px;
+                max-width: 80%;
+              }
+          
+              .popup-image {
+                max-width: 100%;
+                height: auto;
+                background: transparent;
+              }
+          
+              .close {
+                position: fixed;
+                top: 20px;
+                right: 40px;
+                cursor: pointer;
+                font-size: 40px;
+                color: #fff;
+                z-index: 1000;
+              }
+          
+              .prev, .next {
+                position: fixed;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 40px;
+                cursor: pointer;
+                padding: 20px;
+                background-color: transparent;
+                border: none;
+                z-index: 1000;
+                color: #fff;
+              }
+          
+              .prev {
+                left: 40px;
+              }
+          
+              .next {
+                right: 40px;
+              }
+              @media only screen and (max-width: 768px) {
+              .left,
+              .right {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+              }
+          
+              .gallery-image {
+                max-width: 80%; /* Adjust image size for smaller screens */
+              }
+            }
+            .popup-content {
+              /* Other styles... */
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+            }
+          
+          .image-container{
+              display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px; /* Set width of the square */
+            height: 400px; /* Set height of the square */
+            overflow: hidden; /* Hide any overflow */
+          }
+          
+          @media only screen and (max-width: 768px) {
+            .left {
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+            }
+          .left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+          }
+          
+          .image-container {
+            width: 100%;
+          }
+          
+          .gallery-image {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+          }
+          
+          .text-container {
+            margin-top: 1rem; /* Adjust spacing between image and text */
+          }
+          
+            .right p {
+              padding: 0 10px; /* Adjust padding for smaller screens */
+            }
+          
+            .gallery-image {
+              max-width: 80%; /* Adjust image size for smaller screens */
+            }
+          
+            .text-container {
+              margin-top: 1rem; /* Adjust spacing between image and text */
+            }
+          
+            .image-item {
+              flex-basis: calc(50% - 1rem); /* Two columns for smaller screens with gap */
+              margin-bottom: 2rem; /* Adjust margin between items */
+            }
+          
+            .image-item img {
+              width: 100%; /* Ensure images take full width of their container */
+              height: auto; /* Maintain aspect ratio */
+            }
+          
+            .titluhandmade {
+              font-family: var(--ff-gordita);
+              font-size: 30px; /* Adjust title font size for smaller screens */
+            }
+          
+            .texthandmade {
+              font-family: var(--ff-gordita);
+
+              font-size: 16px; /* Adjust text font size for smaller screens */
+            }
+          }
+          
+
+
+          
+          
+          
+          .image-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1rem;
+          overflow: hidden;
+          }
+          
+          .image-item {
+          flex: 1 0 28%;
+          min-width: 200px;
+          cursor: zoom-in;
+          }
+          
+          .image-item img {
+          width: 700px;
+          height: 700px;
+          object-fit: cover;
+          transition: transform 250ms cubic-bezier(0.79, 0.25, 0, 1.07);
+          background: transparent;
+          }
+          
+          .image-item:is(:hover, :focus) img {
+          transform: scale(1.03);
+          }
+          
+          .titluhandmade{
+            font-size: 45px; /* Setează dimensiunea textului */
+            font: "Gordita", sans-serif;
+          }
+          .texthandmade{
+            font-size: 20px; /* Setează dimensiunea textului */
+            font: "Gordita", sans-serif;
+          }
+          @media only screen and (max-width: 768px) {
+            /* Adjustments for smaller screens */
+          
+            .left,
+            .right {
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+              width: 100%; /* Ensure full width for smaller screens */
+            }
+          
+            .right p {
+              padding: 0 10px; /* Adjust padding for smaller screens */
+            }
+          
+            .gallery-image {
+              max-width: 80%; /* Adjust image size for smaller screens */
+              padding: 0;
+            }
+            .image-container{
+              padding: 0;
+            }
+            .image-item {
+              flex-basis: calc(50% - 1rem); /* Two columns for smaller screens with gap */
+              margin-bottom: 2rem; /* Adjust margin between items */
+            }
+          
+            .image-item img {
+              width: 100%; /* Ensure images take full width of their container */
+              height: auto; /* Maintain aspect ratio */
+            }
+          
+            .titluhandmade {
+              font-size: 30px; /* Adjust title font size for smaller screens */
+            }
+
+          
+         
+            .texthandmade {
+              font-size: 16px; /* Adjust text font size for smaller screens */
+            }
+          }
+          .plan{
+            justify-self: center;
+            font-size: 60px;
+            font-family: var(--ff-recoleta);
+            margin: 0;
+          }
+          </style>
+          </head>
+          <body>
+              <section id="about-us">
+                  <div class="row">
+                  <div class="container-fluid">
+                    <br>
+                    <div class="row align-items-center justify-content-between g-5">
+              
+                      <br>
+              <div class="container">
+                <div >
+                  <div class="plan" >
+                    <h2 >Activități</h2>
+                    </a>
+                  </div>
+                </div>
+          
+              
+
+                <div class="left">
+              
+                    <div class="image-container">
+                        <img src="assets/imagini2\fes1.png" alt="Image 1" class="gallery-image" onclick="openPopup(['assets/imagini2/fes1.png', 'assets/imagini2/fes2.png', 'assets/imagini2/fes3.png','assets/imagini2/fes4.png', 'assets/imagini2/fes5.png', 'assets/imagini2/fes6.png','assets/imagini2/fes7.png', 'assets/imagini2/fes8.png', 'assets/imagini2/fes9.png', 'assets/imagini2/fes10.png'])">
+                    </div>
+                    <div class="right">
+                   
+                      <p class="texthandmade">
+                        <b class="titluhandmade">TVC - Festivalul Națiunilor</b>
+                        <br>
+                        <br>
+                        
+                        Vineri, 31 ianuarie, în Casa Mare a liceului nostru a avut loc un eveniment de neuitat - ,,TVC - Festivalul Națiunilor” , o competiție plină 
+                        de creativitate, energie și momente memorabile între clasele de liceu. Fiecare echipă și-a 
+                        demonstrat talentul, ingeniozitatea și spiritul de echipă, aducând pe scenă momente artistice 
+                        inspirate din cultura, tradițiile și specificul țării pe care au reprezentat-o. ✨
+                        De la scenete amuzante până la dansuri spectaculoase și costume autentice, concurenții au reușit 
+                        să cucerească publicul și juriul. Atmosfera a fost plină de râsete, aplauze și emoții, iar publicul 
+                        a fost purtat într-o călătorie inedită prin diverse colțuri ale lumii. ✈️</p>
+                    </div>
+                  </div>
+               
+              </section>
+          
+          
+          
+            <div id="popup" class="popup">
+              <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <img id="popupImage" class="popup-image">
+                <div class="prev" onclick="prevPopupImage()">&#10094;</div>
+                <div class="next" onclick="nextPopupImage()">&#10095;</div>
+              </div>
+            </div>
+          
+            <script>
+              let popupIndex = 0;
+              let images = [];
+          
+              function openPopup(imageSources) {
+                const popup = document.getElementById('popup');
+                const popupImage = document.getElementById('popupImage');
+                images = imageSources;
+                popup.style.display = 'block';
+                popupImage.src = images[0];
+                popupIndex = 0;
+              }
+          
+              function closePopup() {
+                document.getElementById('popup').style.display = 'none';
+              }
+          
+              function nextPopupImage() {
+                popupIndex = (popupIndex + 1) % images.length;
+                document.getElementById('popupImage').src = images[popupIndex];
+              }
+          
+              function prevPopupImage() {
+                popupIndex = (popupIndex - 1 + images.length) % images.length;
+                document.getElementById('popupImage').src = images[popupIndex];
+              }
+          
+              // Close the popup when clicking outside of it
+              window.onclick = function(event) {
+                const popup = document.getElementById('popup');
+                if (event.target == popup) {
+                  popup.style.display = "none";
+                }
+              }
+            </script>
+          
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+          <script>
+            $(document).ready(function(){
+              $('.modal-slider').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 2000
+              });
+            });
+          
+            function openModal() {
+              document.getElementById("myModal").style.display = "block";
+            }
+          
+            function closeModal() {
+              document.getElementById("myModal").style.display = "none";
+            }
+          </script>
+          
+          <script type="module" src="./js/galleryApp.js"></script>
+          <script type="module">
+            import initGallery from "./js/galleryApp.js";
+            initGallery('./data/galleries.json', {
+              speed: 600,
+            })
+          </script>
+          <script>
+            let lastScrollTop = 0;
+          
+          window.addEventListener("scroll", function() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll > lastScrollTop) {
+              // Utilizatorul derulează în jos
+              document.getElementById("header").classList.add("navbar-scroll-hide");
+            } else {
+              // Utilizatorul derulează în sus
+              document.getElementById("header").classList.remove("navbar-scroll-hide");
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+          }, false);
+          
+          </script>
+</article>
+  </main>
+
+
+  <section class="section service emko" id="service" aria-labelledby="service-lable">
+    <div class="card">
+      <h2>Inscrie-te</h2>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label>Prenume</label>
+            <input type="text">
+          </div>
+        </div>
+
+    
+        <div class="col">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text">
+          </div>
+        </div>
+    
+        <div class="col">
+          <div class="form-group">
+            <label>Numar de telefon</label>
+            <input type="text">
+          </div>
+        </div>
+    
+        <div class="col">
+          <div class="form-group">
+            <label>Mesaj</label>
+       <input type="text">
+          </div>
+        </div>
+    
+        <div class="col">
+          <input type="submit" value="Transmite">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <footer class="footer">
+    <div class="custom-main">
+      <div class="custom-footer">
+          <div class="custom-bubbles">
+              <!-- Loop to generate 128 bubbles with random properties -->
+              <script>
+                  for (var i = 0; i < 500; i++) {
+                      document.write('<div class="custom-bubble" style="--size:' + (2 + Math.random() * 4) + 'rem; --distance:' + (6 + Math.random() * 4) + 'rem; --position:' + (-5 + Math.random() * 110) + '%; --time:' + (2 + Math.random() * 2) + 's; --delay:' + (-1 * (2 + Math.random() * 2)) + 's;"></div>');
+                  }
+              </script>
+          </div>
+
+            <div class="custom-content">
+              <!-- Left Section -->
+              <div>
+                <b>Liceul Teoretic "Principesa Natalia Dadiani"</b>
+                <div>
+                  <p>Locație: Calea Ieșilor, nr. 21</p>
+                  <p>Telefon: 022-74-29-18</p>
+                  <p href="mailto:ipltnataliadadiani@gmail.com>Email: "> Email: ipltnataliadadiani@gmail.com</a></p>
+                </div>
+              </div>
+              
+              <!-- Center Section -->
+              <div>
+                <b>Link-uri pe site-ul scolii</b>
+                <div>
+                  <a href="https://ipltnataliadadiani.md/pasaportul-liceului" target="_blank">Despre noi</a>
+                  <a href="https://ipltnataliadadiani.md/actualitati" target="_blank">Actualități</a>
+                  <a href="https://ipltnataliadadiani.md/" target="_blank">Profiluri Educaționale</a>
+                  <a href="https://ipltnataliadadiani.md/consiliul-elevilor" target="_blank">Consiliul Elevilor</a>
+                </div>
+              </div>
+              
+              <!-- Right Section -->
+              <div>
+                <b>Conectează-te cu noi</b>
+                <div>
+                  <a href="https://www.facebook.com" class="custom-icon" style="background-image: url('icon-facebook.svg');" target="_blank"></a>
+                  <a href="#" class="custom-icon" style="background-image: url('icon-twitter.svg');"></a>
+                  <a href="#" class="custom-icon" style="background-image: url('icon-instagram.svg');"></a>
+                  <a href="#" class="custom-icon" style="background-image: url('icon-linkedin.svg');"></a>
+                </div>
+                <p>©2025 Liceul Teoretic "Principesa Natalia Dadiani". Toate drepturile rezervate.</p>
+              </div>
+              
+            </div>
+          </div>
+          
+          </div>
+      </div>
+      <svg style="position:fixed; top:100vh">
+          <defs>
+              <filter id="custom-blob">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="custom-blur"></feGaussianBlur>
+                  <feColorMatrix in="custom-blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="custom-blob"></feColorMatrix>
+              </filter>
+          </defs>
+      </svg>
+  </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>0%</a>
+
+
+
+
+
+  <!-- 
+    - #CUSTOM CURSOR
+  -->
+
+  <div class="cursor" data-cursor></div>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+<!-- jQuery (required for CounterUp) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- CounterUp plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.count-number').counterUp({
+        delay: 10,  // Speed of the count-up effect
+        time: 2000  // Duration of animation (2 seconds)
+    });
+  });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consiliul Elevilor </title>
+  <meta name="title" content="Consiliul Elevilor">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/font/font.css">
+  <link rel="preload" as="image" href="./assets/images/loading.svg">
+  <link rel="preload" as="image" href="./assets/images/loading-circle.svg">
+  
+  
+
+
+</head>
+
+<body class="active" id="top">
+
+
+  <div class="loading" data-loading>
+    <img src="./assets/images/1l.png" width="100" height="100" alt="loading" class="img">
+    <img src="./assets/images/loading-circle.svg" width="70" height="70" alt="" class="circle">
+  </div>
+ 
+  <header id="header">
+    <nav>
+      <div class="wrapper">
+        <div class="logo"><a href="#">Consiliul Elevilor</a></div>
+        <input type="radio" name="slider" id="menu-btn">
+        <input type="radio" name="slider" id="close-btn">
+        <ul class="nav-links">
+          <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+          <li><a href="index.html">Pagina principală</a></li>
+          <li><a href="info.html">Reguli</a></li>
+
+          <li>
+            <a href="#" class="desktop-item">Evenimente</a>
+           
+            <ul class="drop-menu">
+              <li><a href="an2023.html">2023</a></li>
+              <li><a href="an2024.html">2024</a></li>
+              <li><a href="an2025.html">2025</a></li>
+
+            </ul>
+          </li>
+          <li><a href="index.html#insc">Cereri</a></li>
+        </ul>
+        <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+      </div>
+    </nav>
+    
+    
+</header>
+
+
+
+<style>
+.reg {
+    text-align: center;
+    font-family: var(--ff-recoleta);
+    font-size: 70px;
+    margin-bottom: 50px;
+   
+}
+
+.rules-container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chapter {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+   
+}
+
+.chapter h2 {
+    color: black;
+    border-bottom: 2px solid #9DC08B;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.article-title {
+    
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.rules-list {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.rules-list li {
+    position: relative;
+    padding: 8px 0 8px 25px;
+    line-height: 1.6;
+}
+
+.rules-list li:before {
+    content: "•";
+    color: #9DC08B;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+}
+mark.scroll-highlight {
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-image: linear-gradient(#9DC08B,#9DC08B);
+
+
+  animation: mark-it linear;
+  animation-fill-mode: forwards;
+  animation-timeline: view();
+  animation-iteration-count: 1;
+  animation-range: contain 0% contain 25%;
+}
+
+@keyframes mark-it {
+  0% {
+    background-size: 0 100%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
+
+</style>
+
+<main>
+    <article>
+        <br><br><br><br>
+        <h1 class="reg">Regulile Consiliului Elevilor</h1>
+
+        <div class="rules-container">
+            <div class="chapter">
+                <h2>Capitolul I: Dispoziții generale</h2>
+                <p class="article-title"><strong>Articolul 1: Denumirea și sediul</strong></p>
+                <ul class="rules-list">
+                    <li>Consiliul Școlar al Elevilor din IPLT Principesa Natalia Dadiani reprezintă interesele elevilor.</li>
+                    <li>Sediul Consiliului se află în cadrul <mark class="scroll-highlight">liceului</mark> .</li>
+                </ul>
+            </div>
+            
+            <div class="chapter">
+                <h2>Capitolul II: Structura organizatorică</h2>
+                <p class="article-title"><strong>Articolul 3: Componența Consiliului</strong></p>
+                <ul class="rules-list">
+                    <li>Consiliul este format din reprezentanți aleși democratic.</li>
+                    <li>Funcții: Președinte, Vicepreședinte, Secretar, Contabil, Membri activi.</li>
+                </ul>
+            </div>
+            
+            <div class="chapter">
+                <h2>Capitolul III: Drepturile și obligațiile membrilor</h2>
+                <p class="article-title"><strong>Articolul 5: Drepturile membrilor Consiliului</strong></p>
+                <ul class="rules-list">
+                    <li>Participarea la ședințe și propunerea de proiecte.</li>
+                    <li>Dreptul de a fi informați despre deciziile <mark class="scroll-highlight">Consiliului</mark> .</li>
+                </ul>
+            </div>
+            
+            <div class="chapter">
+                <h2>Capitolul IV: Funcționarea Consiliului</h2>
+                <p class="article-title"><strong>Articolul 7: Ședințele Consiliului</strong></p>
+                <ul class="rules-list">
+                    <li>Consiliul se întrunește lunar.</li>
+                    <li>Deciziile sunt luate prin <mark class="scroll-highlight">vot</mark> .</li>
+                </ul>
+            </div>
+            
+            <div class="chapter">
+                <h2>Capitolul V: Finanțarea Consiliului</h2>
+                <p class="article-title"><strong>Articolul 9: Sursa de finanțare</strong></p>
+                <ul class="rules-list">
+                    <li>Finanțarea provine din contribuțiile elevilor, <mark class="scroll-highlight">sponsorizări și proiecte</mark> .</li>
+                </ul>
+            </div>
+            
+            <div class="chapter">
+                <h2>Capitolul VI: Dispoziții finale</h2>
+                <p class="article-title"><strong>Articolul 11: Modificarea regulamentului</strong></p>
+                <ul class="rules-list">
+                    <li>Regulamentul poate fi modificat prin votul majorității.</li>
+                </ul>
+            </div>
+        </div>
+    </article>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="section service emko" id="service" aria-labelledby="service-lable">
+    <div class="card">
+      <h2>Inscrie-te</h2>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label>Prenume</label>
+            <input type="text">
+          </div>
+        </div>
+
+    
+        <div class="col">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text">
+          </div>
+        </div>
+    
+        <div class="col">
+          <div class="form-group">
+            <label>Numar de telefon</label>
+            <input type="text">
+          </div>
+        </div>
+    
+        <div class="col">
+          <div class="form-group">
+            <label>Mesaj</label>
+       <input type="text">
+          </div>
+        </div>
+    
+        <div class="col">
+          <input type="submit" value="Transmite">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <footer class="footer">
+    <div class="custom-main">
+      <div class="custom-footer">
+          <div class="custom-bubbles">
+              <!-- Loop to generate 128 bubbles with random properties -->
+              <script>
+                  for (var i = 0; i < 500; i++) {
+                      document.write('<div class="custom-bubble" style="--size:' + (2 + Math.random() * 4) + 'rem; --distance:' + (6 + Math.random() * 4) + 'rem; --position:' + (-5 + Math.random() * 110) + '%; --time:' + (2 + Math.random() * 2) + 's; --delay:' + (-1 * (2 + Math.random() * 2)) + 's;"></div>');
+                  }
+              </script>
+          </div>
+
+            <div class="custom-content">
+              <!-- Left Section -->
+              <div>
+                <b>Liceul Teoretic "Principesa Natalia Dadiani"</b>
+                <div>
+                  <p>Locație: Calea Ieșilor, nr. 21</p>
+                  <p>Telefon: 022-74-29-18</p>
+                  <p href="mailto:ipltnataliadadiani@gmail.com>Email: "> Email: ipltnataliadadiani@gmail.com</a></p>
+                </div>
+              </div>
+              
+              <!-- Center Section -->
+              <div>
+                <b>Link-uri pe site-ul scolii</b>
+                <div>
+                  <a href="https://ipltnataliadadiani.md/pasaportul-liceului" target="_blank">Despre noi</a>
+                  <a href="https://ipltnataliadadiani.md/actualitati" target="_blank">Actualități</a>
+                  <a href="https://ipltnataliadadiani.md/" target="_blank">Profiluri Educaționale</a>
+                  <a href="https://ipltnataliadadiani.md/consiliul-elevilor" target="_blank">Consiliul Elevilor</a>
+                </div>
+              </div>
+              
+              <!-- Right Section -->
+              <div>
+                <b>Conectează-te cu noi</b>
+                <div>
+                  <a href="https://www.facebook.com" class="custom-icon" style="background-image: url('icon-facebook.svg');" target="_blank"></a>
+                  <a href="#" class="custom-icon" style="background-image: url('icon-twitter.svg');"></a>
+                  <a href="#" class="custom-icon" style="background-image: url('icon-instagram.svg');"></a>
+                  <a href="#" class="custom-icon" style="background-image: url('icon-linkedin.svg');"></a>
+                </div>
+                <p>©2025 Liceul Teoretic "Principesa Natalia Dadiani". Toate drepturile rezervate.</p>
+              </div>
+              
+            </div>
+          </div>
+          
+          </div>
+      </div>
+      <svg style="position:fixed; top:100vh">
+          <defs>
+              <filter id="custom-blob">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="custom-blur"></feGaussianBlur>
+                  <feColorMatrix in="custom-blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="custom-blob"></feColorMatrix>
+              </filter>
+          </defs>
+      </svg>
+  </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>0%</a>
+
+
+
+
+
+  <!-- 
+    - #CUSTOM CURSOR
+  -->
+
+  <div class="cursor" data-cursor></div>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+<!-- jQuery (required for CounterUp) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- CounterUp plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.count-number').counterUp({
+        delay: 10,  // Speed of the count-up effect
+        time: 2000  // Duration of animation (2 seconds)
+    });
+  });
+</script>
+
+</body>
+
+</html>
