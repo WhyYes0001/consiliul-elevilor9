@@ -2250,7 +2250,7 @@ body, html {
     position: relative; /* For positioning the overlay */
     padding-top: 50px;
     padding-bottom: 50px;
-    background-image: url('../images/poza1.png'); /* Replace with your image path */
+    /* Replace with your image path */
     background-size: cover;
     background-position: center;
     filter: none; /* No blur effect applied to the section itself */
@@ -2263,7 +2263,7 @@ body, html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../images/poza1.png'); /* Same background image */
+    /* Same background image */
     background-size: cover;
     background-position: center;
     filter: blur(5px); /* Apply the blur only to the background image */
@@ -2284,7 +2284,7 @@ body, html {
  margin-bottom: 0;
  text-align: center;
  font-weight: bold;
- color: #fff;
+ color: black;
 }
 
 .stats-text {
@@ -2293,7 +2293,7 @@ body, html {
  margin-top: 15px;
  margin-bottom: 0;
  text-align: center;
- color: #fff;
+ color: black;
  text-transform: uppercase;
  font-weight: bold;
 }
@@ -2302,14 +2302,14 @@ body, html {
 margin: 12px auto 0;
  width: 55px;
  height: 2px;
- background-color: #fff;
+ background-color: black;
 }
 .stats-icon {
  font-size: 35px;
  margin: 0 auto;
  float: none;
  display: table;
- color: #fff;
+ color: black;
 }
 
 @media (max-width: 992px) {
@@ -2641,20 +2641,25 @@ margin: 12px auto 0;
 
 
 
-
-
 .custom-footer {
   z-index: 1;
   --footer-background: #9DC08B;
   display: grid;
   position: relative;
   grid-area: footer;
-  width: 100%; /* Ensure full width */
+  width: 100vw; /* Changed to viewport width */
   min-height: 12rem;
   background: var(--footer-background);
-  margin-top: auto; /* Push footer to the bottom */
-  padding: 0; /* Remove any default padding */
-  box-sizing: border-box; /* Include padding and border in width/height calculations */
+  margin-top: auto;
+  padding: 0;
+  box-sizing: border-box;
+  left: 0; /* Ensure it starts from the left edge */
+  right: 0; /* Ensure it extends to right edge */
+  margin-left: -50vw; /* Compensate for any parent padding */
+  margin-right: -50vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
 }
 
 .custom-footer .custom-bubbles {
@@ -2684,39 +2689,45 @@ margin: 12px auto 0;
   grid-gap: 4rem;
   padding: 2rem;
   background: var(--footer-background);
-  text-align: center; /* Center text */
-  box-sizing: border-box; /* Ensure padding doesn't create overflow */
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .custom-footer .custom-content a,
 .custom-footer .custom-content p {
   color: #F5F7FA;
   text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Added text shadow for better visibility */
 }
 
 .custom-footer .custom-content b {
   color: white;
-  font-size: 2rem; /* Increase font size */
+  font-size: 2rem;
   display: block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Added stronger text shadow for headers */
+  margin-bottom: 1rem;
 }
 
 .custom-footer .custom-content a {
   color: #F5F7FA;
   text-decoration: none;
-  margin: 0.5rem 0; /* Increase spacing */
-  font-size: 1.5rem; /* Increase font size */
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600; /* Made links bolder */
 }
 
 .custom-footer .custom-content p {
-  margin: 0.5rem 0; /* Increase spacing */
-  font-size: 1.5rem; /* Increase font size */
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 500; /* Made text slightly bolder */
 }
 
 .custom-footer .custom-content > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* Center content horizontally */
+  align-items: center;
 }
 
 .custom-footer .custom-content > div > div {
@@ -2734,6 +2745,34 @@ margin: 12px auto 0;
   margin: 0.25rem 0;
   background-size: cover;
   background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-footer .custom-content {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    padding: 2rem 1rem;
+    width: 100%;
+  }
+
+  .custom-footer .custom-content b {
+    font-size: 1.8rem; /* Increased from previous mobile size */
+    margin-bottom: 0.8rem;
+  }
+
+  .custom-footer .custom-content a,
+  .custom-footer .custom-content p {
+    font-size: 1.4rem; /* Increased from previous mobile size */
+    line-height: 1.6; /* Added line height for better readability */
+    margin: 0.4rem 0;
+  }
+
+  .custom-footer .custom-content > div {
+    margin-bottom: 2rem;
+    background-color: rgba(0, 0, 0, 0.1); /* Added subtle background for better contrast */
+    padding: 1rem;
+    border-radius: 8px;
+  }
 }
 
 @keyframes custom-bubble-size {
@@ -2795,6 +2834,7 @@ margin: 12px auto 0;
 
 
 
+/*
 
 
 
@@ -2811,138 +2851,154 @@ margin: 12px auto 0;
 
 
 
-
-
-
-.emko{
+.back {
+  background: linear-gradient(120grad, #643986, #98aed5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.registration-form {
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  top: 15%;
+  background: transparent;
+}
+.registration-form header {
+  position: relative;
+  z-index: 4;
+  background: white;
+  padding: 20px 40px;
+  border-radius: 15px 15px 0 0;
+}
+.registration-form header h1 {
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: #333;
+  font-size: 23px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.registration-form header p {
+  word-spacing: 0px;
+  color: #9facb6;
+  font-size: 17px;
+  margin: 0;
+  margin-top: 5px;
+}
+.registration-form form {
+  position: relative;
+}
+.registration-form .input-section {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 75px;
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in;
+}
+.registration-form .input-section.folded {
+  width: 95%;
+  margin-top: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+}
+.registration-form .input-section.folded input {
+  background-color: #e9e2c0;
+}
+.registration-form .input-section.folded span {
+  background-color: #e9e2c0;
+}
+.registration-form .input-section.folded + .folded {
+  width: 90%;
+  margin-top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 0;
+}
+.registration-form .input-section.folded + .folded input {
+  background-color: #e1bcef;
+}
+.registration-form .input-section.folded + .folded span {
+  background-color: #e1bcef;
+}
+.registration-form .input-section.fold-up {
+  margin-top: -75px;
+}
+.registration-form form input {
+  background: #fff;
+  color: #8f8fd6;
+  width: 80%;
+  border: 0;
+  padding: 20px 40px;
+  margin: 0;
+}
+.registration-form form input:focus {
+  outline: none;
+}
+.registration-form form input::placeholder {
+  color: #8f8fd6;
+  font-weight: 100;
+}
+.animated-button {
+  width: 20%;
+  background-color: #d4d4ff;
+}
+.animated-button span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  line-height: 75px;
+  text-align: center;
+  height: 75px;
+  transition: all 0.2s ease-in;
+}
+.animated-button span i {
+  font-size: 25px;
+  color: #9999f8;
+}
+.animated-button .next-button {
+  background: transparent;
+  color: #9999f8;
+  font-weight: 100;
+  width: 100%;
+  border: 0;
+}
+.next {
+  margin-top: -75px;
+}
+.success {
+  width: 100%;
+  position: absolute;
   display: flex;
   align-items: center;
-  justify-content: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 75px;
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in;
+  background: limegreen;
+  margin-top: -75px;
 }
-
-
-
-.card {
-  
-  width: 70%;
-  padding: 30px 90px 90px 90px;
-  border: 6px solid rgba(0, 0, 0, 0.3);
-  border-radius: 50px;
-  position: relative;
-  background-color: #9DC08B;
-}
-
-.card h2 {
-  color: rgba(0, 0, 0, 0.3);
-  font-size: 60px;
-  text-transform: uppercase;
+.success p {
   color: white;
-}
-
-.card .row {
-  position: relative;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 18px;
   width: 100%;
-  display: grid;
-  grid: auto / auto auto;
-  grid-template-columns: repeat(auto-fit,minmax(40%, 1fr));
-  grid-gap: 30px;
+  text-align: center;
 }
-
-.card .row .col {
-  position: relative;
-  width: 100%;
-  margin: 15px 10px 20px 0;
-  transition: 0.5s;
-}
-
-.card .row .form-group {
-  position: relative;
-  width: 100%;
-  height: 40px;
-  color: #ffffff;
-}
-
-.card .row .form-group input,
-.card .row .form-group textarea {
-  position: absolute;
-  width: 90%;
-  height: 100%;
-  background: transparent;
-  outline: none;
-  font-size: 24px;
-  padding: 15px 0 10px 20px;
-  border: 5px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
-  color: #ffffff;
-  border-radius: 50px;
-}
-
-.card .row .form-group label {
-  line-height: 40px;
-  color: #ffffff;
-  font-size: 24px;
-  margin: 0 0 0 30px;
-  display: block;
-  pointer-events: none;
-}
-
-.row .col:nth-child(6) {
-  margin-top: 64px;
-}
-
-.card .row .form-group input:focus,
-.card .row .form-group textarea:focus {
-  border: 5px solid #ffffff;
-  transition: all 0.5s;
-}
-
-.card .row input[type="submit"] {
-  border: 5px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
-  padding: 10px;
-  height: 100%;
-  width: 50%;
-  cursor: pointer;
-  outline: none;
-  background: transparent;
-  text-transform: uppercase;
-  color: #ffffff;
-  line-height: 40px;
-  font-size: 24px;
-  font-weight: 700;
-  border-radius: 45px;
-  transition: all 0.4s;
-}
-
-.card .row input[type="submit"]:hover {
-  border: 5px solid rgba(255, 255, 255, 1);
-  color: #ffffff;
-  transition: all 0.4s;
-}
-
-@media screen and (max-width: 900px) {
-  .card .row {
-    grid-template-columns: repeat(auto-fit,minmax(70%, 1fr));
-  }
-  
-  .card {
-    padding: 20px;
-  }
-  
-  .card h2 {
-    font-size: 34px;
-  }
-  
-  .card .row input[type="submit"] {
-    width: 100%;
-  }
-}
-
-
-
-
-
-
 
 
 
@@ -3695,5 +3751,253 @@ a:hover img {
   border-radius: 10px; /* Optional for rounded corners */
 }
 
+
+
+
+
+
+
+
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+
+  /* General Adjustments */
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+
+  }
+
+  /* Responsive Navigation */
+  .wrapper .nav-links {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 300px;
+    top: 0;
+    left: -100%;
+    background: var(--eerie-black);
+    display: block;
+    padding: 50px 10px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+  }
+
+  #menu-btn:checked ~ .nav-links {
+    left: 0%;
+  }
+
+  .nav-links li {
+    margin: 15px 10px;
+  }
+
+  .nav-links li a {
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  /* Responsive Hero Section */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .hero .wrapper {
+    left: auto;
+    top: auto;
+    text-align: center;
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
+
+  /* Responsive Images */
+  .gallery-list {
+    grid-template-columns: 1fr;
+  }
+
+  .img-holder {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Responsive Footer */
+  .custom-footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+
+nav {
+  padding: 5px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: none;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--smokey-black);
+}
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+nav .logo img {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
+nav .logo h1 {
+  font-size: 1.1rem;
+  background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: var(--smokey-black);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li {
+  margin-left: 1.5rem;
+  position: relative;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 110%;
+  font-weight: 400;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #9DC08B;
+  color: #fff;
+}
+
+.services-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  background-color: var(--smokey-black);
+  border-radius: 25px;
+  padding: 10px 0;
+  min-width: 150px;
+}
+
+.services-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  margin: 0;
+  padding: 5px 15px;
+}
+
+.dropdown-menu li a {
+  padding: 8px 16px;
+  display: block;
+  border-radius: 25px;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 1px;
+  background-color: black;
+  display: block;
+  margin: 7px auto;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger-active {
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.6s;
+  transform: rotate(45deg);
+}
+
+.hamburger-active .line:nth-child(2) {
+  width: 0px;
+}
+
+.hamburger-active .line:nth-child(1),
+.hamburger-active .line:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.hamburger-active .line:nth-child(1) {
+  transform: translateY(12px);
+}
+
+.hamburger-active .line:nth-child(3) {
+  transform: translateY(-5px) rotate(90deg);
+}
+
+.menubar {
+  position: fixed;
+  top: 0;
+  left: -60%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%;
+  height: 100vh;
+  padding: 20% 0;
+  background: rgba(255, 255, 255, 0);
+  background-color: var(--smokey-black);
+  transition: all 0.5s ease-in;
+  z-index: 9998;
+}
+.active {
+  left: 0;
+  box-shadow: none;
+}
+
+.menubar ul {
+  padding: 0;
+  list-style: none;
+}
+.menubar ul li {
+  margin-bottom: 32px;
+}
+
+.menubar ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 110%;
+  font-weight: 400;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.menubar ul li a:hover {
+  background-color: #000;
+  color: #fff;
+}
+@media screen and (max-width: 790px) {
+  .hamburger {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+}
 
 
